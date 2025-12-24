@@ -252,10 +252,13 @@ with tab3:
     fig.add_trace(go.Bar(
         x=weight_df["학교"], y=weight_df["평균 생중량"]), 1, 1)
 
-    fig.add_trace(go.Bar(
-        x=growth_data.keys(),
-        y=[df["잎 수(장)"].mean() for df in growth_data.values()]
-    ), 1, 2)
+   schools = list(growth_data.keys())
+
+fig.add_trace(go.Bar(
+    x=schools,
+    y=[df["잎 수(장)"].mean() for df in growth_data.values()]
+), 1, 2)
+
 
     fig.add_trace(go.Bar(
         x=growth_data.keys(),
